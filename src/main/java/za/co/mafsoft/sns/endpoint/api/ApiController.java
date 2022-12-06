@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api")
 public class ApiController {
     @PostMapping("/receive")
-    public ResponseEntity<Void> receive(@RequestBody String text){
-        System.out.println(text);
+    public ResponseEntity<Void> receive(@RequestBody String text) {
+        new Thread(() -> System.out.println(text));
         return ResponseEntity.ok().build();
     }
 }
